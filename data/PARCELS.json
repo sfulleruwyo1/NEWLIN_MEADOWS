@@ -9442,7 +9442,8 @@
 				"PAINT" : "CITYSCAPE",
 				"TRIM" : "GRAY CLOUDS",
 				"MAIN_HEX" : "7f817e",
-				"TRIM_HEX" : "b7b7b2"
+				"TRIM_HEX" : "b7b7b2",
+				"PICTURE" : "YES"
 			}
 		},
 		{

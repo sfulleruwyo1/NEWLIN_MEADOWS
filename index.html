@@ -464,6 +464,11 @@
                 `<div class="row pt-3"><b>TRIM COLOR:</b><div class='box' style = 'background-color:#${trimHex}'></div><span> ${trim}</span></div>`;
             }
 
+            if (prop.PICTURE){
+              popup +=
+                `<div class="row pt-3"><<img src = 'img/homes/${address}'</div>`;
+            }
+
 
             layer.bindPopup(popup);
             layer.bindTooltip(address);
