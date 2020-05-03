@@ -318,10 +318,10 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15525 E FLOWER MOUND PL",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
+				"PAINT" : "Colonnade",
+				"TRIM" : "Apple Peel",
+				"PNT_YEAR" : "2019",
+				"MAIN_HEX" : "c6c0b6",
 				"TRIM_HEX" : null
 			}
 		},
@@ -491,11 +491,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15490 E FLOWER MOUND PL",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "Pavillion Beige",
+				"TRIM" : "Steamed Milk",
+				"PNT_YEAR" : "2019+",
+				"MAIN_HEX" : "c5b6a4",
+				"TRIM_HEX" : "ece1d1"
 			}
 		},
 		{
@@ -786,11 +786,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15629 E INDIAN GRASS AVE",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "REPOSE GRAY",
+				"TRIM" : "HIGH REFLECTIVE WHITE",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "ccc9c0",
+				"TRIM_HEX" : "f7f7f1"
 			}
 		},
 		{
@@ -834,11 +834,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11626 S TUMBLE BRUSH ST",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "GRIZZLE GRAY",
+				"TRIM" : "CREAMY",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "636562",
+				"TRIM_HEX" : "efe8db"
 			}
 		},
 		{
@@ -1568,11 +1568,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11886 S BREEZE GRASS WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "Acier",
+				"TRIM" : "Classic Gray",
+				"PNT_YEAR" : "2019+",
+				"MAIN_HEX" : "9e9991",
+				"TRIM_HEX" : "E3DFD5"
 			}
 		},
 		{
@@ -1689,11 +1689,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11577 S FLOWER MOUND WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "WEB GRAY",
+				"TRIM" : "WESTHIGHLAND WHITE",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "616669",
+				"TRIM_HEX" : "f3eee3",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -2224,11 +2225,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11653 S FLOWER MOUND WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "Polished Concrete",
+				"TRIM" : "Ibis White",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "9e9793",
+				"TRIM_HEX" : "f2ece6"
 			}
 		},
 		{
@@ -2490,11 +2491,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11695 S FLOWER MOUND WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "Web Gray",
+				"TRIM" : "Greek Villa",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "616669",
+				"TRIM_HEX" : "f0ece2"
 			}
 		},
 		{
@@ -4252,11 +4253,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11767 S ROCK WILLOW WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "Library Pewter",
+				"TRIM" : "Ramie",
+				"PNT_YEAR" :"2019+",
+				"MAIN_HEX" : "7f7263",
+				"TRIM_HEX" : "cdbda2"
 			}
 		},
 		{
@@ -4480,11 +4481,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15577 E MAIDEN HAIR LN",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "Web Gray",
+				"TRIM" : "Snowbound",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "616669",
+				"TRIM_HEX" : "edeae5"
 			}
 		},
 		{
@@ -5197,11 +5198,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11561 S FLOWER MOUND WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "BLUE SPRUCE",
+				"TRIM" : "CREAMY",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "617178",
+				"TRIM_HEX" : "efe8db",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -6615,11 +6617,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11627 S TUMBLE BRUSH ST",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "Web Gray",
+				"TRIM" : "Snowbound",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "616669",
+				"TRIM_HEX" : "edeae5"
 			}
 		},
 		{
@@ -9679,7 +9681,8 @@
 				"PAINT" : "GAUNTLET GRAY",
 				"TRIM" : "WESTHIGHLAND WHITE",
 				"MAIN_HEX" : "78736e",
-				"TRIM_HEX" : "f3eee3"
+				"TRIM_HEX" : "f3eee3",
+				"PICTURE" : "YES"
 			}
 		},
 		{
