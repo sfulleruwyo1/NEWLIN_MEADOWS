@@ -838,7 +838,8 @@
 				"TRIM" : "CREAMY",
 				"PNT_YEAR" : "2020",
 				"MAIN_HEX" : "636562",
-				"TRIM_HEX" : "efe8db"
+				"TRIM_HEX" : "efe8db",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -3071,7 +3072,8 @@
 				"TRIM" : null,
 				"PNT_YEAR" : null,
 				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"TRIM_HEX" : null,
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -3090,11 +3092,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15585 E MAIDEN HAIR LN",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "BIRD BATH TAN",
+				"TRIM" : "TRADITIONAL IVORY",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "BCAB8E",
+				"TRIM_HEX" : "DFD3BF",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -6621,7 +6624,8 @@
 				"TRIM" : "Snowbound",
 				"PNT_YEAR" : "2020",
 				"MAIN_HEX" : "616669",
-				"TRIM_HEX" : "edeae5"
+				"TRIM_HEX" : "edeae5",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -7171,11 +7175,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15569 E MAIDEN HAIR LN",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "BLUE SPRUCE",
+				"TRIM" : "SUPER WHITE",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "5F7277",
+				"TRIM_HEX" : "f2f3ef",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -7228,11 +7233,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11731 S FLOWER MOUND WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "RUSHING RIVER",
+				"TRIM" : "CREAMY WHITE",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "a19c8f",
+				"TRIM_HEX" : "efe8db",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -7276,11 +7282,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11578 S TUMBLE BRUSH ST",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "GAUNTLET GRAY",
+				"TRIM" : "WHITE DUCK",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "78736e",
+				"TRIM_HEX" : "e5dfd2",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -10251,7 +10258,8 @@
 				"PAINT" : "TANBARK",
 				"TRIM" : "DRIED EDAMAME",
 				"MAIN_HEX" : "896656",
-				"TRIM_HEX" : "b19f80"
+				"TRIM_HEX" : "b19f80",
+				"PICTURE" : "YES"
 			}
 		},
 		{
