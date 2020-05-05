@@ -1573,7 +1573,8 @@
 				"TRIM" : "Classic Gray",
 				"PNT_YEAR" : "2019+",
 				"MAIN_HEX" : "9e9991",
-				"TRIM_HEX" : "E3DFD5"
+				"TRIM_HEX" : "E3DFD5",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -4260,7 +4261,8 @@
 				"TRIM" : "Ramie",
 				"PNT_YEAR" :"2019+",
 				"MAIN_HEX" : "7f7263",
-				"TRIM_HEX" : "cdbda2"
+				"TRIM_HEX" : "cdbda2",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -4488,7 +4490,8 @@
 				"TRIM" : "Snowbound",
 				"PNT_YEAR" : "2020",
 				"MAIN_HEX" : "616669",
-				"TRIM_HEX" : "edeae5"
+				"TRIM_HEX" : "edeae5",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -7259,11 +7262,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11684 S BREEZE GRASS WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "ELEPHANT EAR",
+				"TRIM" : "AGED WHITE",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "988F85",
+				"TRIM_HEX" : "e8decd"
 			}
 		},
 		{
@@ -8568,11 +8571,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15767 E MEADOW VISTA CIR",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "ELEPHANT EAR",
+				"TRIM" : "CASA BLANCA",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "988f85",
+				"TRIM_HEX" : "ede1ce"
 			}
 		},
 		{
@@ -9643,7 +9646,8 @@
 				"PAINT" : "WARM STONE",
 				"TRIM" : "ANEW GRAY",
 				"MAIN_HEX" : "887b6c",
-				"TRIM_HEX" : "bfb6aa"
+				"TRIM_HEX" : "bfb6aa",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9889,7 +9893,8 @@
 				"PAINT" : "SQUIRREL TAIL",
 				"TRIM" : "SHAKER BEIGE",
 				"MAIN_HEX" : "8e897b",
-				"TRIM_HEX" : "d2c3a8"
+				"TRIM_HEX" : "d2c3a8",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -10069,7 +10074,8 @@
 				"PAINT" : "GAUNTLET GRAY",
 				"TRIM" : "SNOWFALL",
 				"MAIN_HEX" : "78736e",
-				"TRIM_HEX" : "e0deda"
+				"TRIM_HEX" : "e0deda",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -10120,7 +10126,8 @@
 				"PAINT" : "DOUBLE LATTE",
 				"TRIM" : "CREAMY",
 				"MAIN_HEX" : "a78c71",
-				"TRIM_HEX" : "efe8db"
+				"TRIM_HEX" : "efe8db",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -10315,7 +10322,8 @@
 				"PAINT" : "TAVERN TAUPE",
 				"TRIM" : "GRECIAN IVORY",
 				"MAIN_HEX" : "9c8a79",
-				"TRIM_HEX" : "d8cfbe"
+				"TRIM_HEX" : "d8cfbe",
+				"PICTURE" : "YES"
 			}
 		},
 		{
