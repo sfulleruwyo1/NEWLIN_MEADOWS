@@ -29,6 +29,9 @@
   <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
 
   <link rel="stylesheet" href="https://unpkg.com/mapbox-gl/dist/mapbox-gl.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.71.1/dist/L.Control.Locate.min.css" />
 
 
 </head>
@@ -234,6 +237,9 @@
 
     <script src="https://unpkg.com/togeojson@0.14.2"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.71.1/dist/L.Control.Locate.min.js"
+      charset="utf-8"></script>
+
     <script src="js/leaflet.filelayer.js"></script>
 
     <script>
@@ -262,6 +268,15 @@
         map = L.map('map').setView([39.771068138277485, -104.98054504394533], 11);
         map.options.maxZoom = 21;
         layer = L.esri.basemapLayer('Streets').addTo(map);
+        let lc = L.control.locate({
+          position: 'topleft',
+          strings: {
+            title: "Show me where I am!"
+          },
+          locateOptions: {
+            enableHighAccuracy: true
+          }
+        }).addTo(map);
         //layer = L.esri.Vector.basemap('Streets').addTo(map);
         $(".Streets").addClass('active');
 
@@ -464,7 +479,7 @@
                 `<div class="row pt-3"><b>TRIM COLOR:</b><div class='box' style = 'background-color:#${trimHex}'></div><span> ${trim}</span></div>`;
             }
 
-            if (prop.PICTURE){
+            if (prop.PICTURE) {
               popup +=
                 `<div class="row pt-3 text-center"><img src="img/homes/${address}.jpg" alt="HOUSE" height="200" width="300"></div>`;
             }
