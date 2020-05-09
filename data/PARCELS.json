@@ -7266,7 +7266,8 @@
 				"TRIM" : "AGED WHITE",
 				"PNT_YEAR" : "2020",
 				"MAIN_HEX" : "988F85",
-				"TRIM_HEX" : "e8decd"
+				"TRIM_HEX" : "e8decd",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -8575,7 +8576,8 @@
 				"TRIM" : "CASA BLANCA",
 				"PNT_YEAR" : "2020",
 				"MAIN_HEX" : "988f85",
-				"TRIM_HEX" : "ede1ce"
+				"TRIM_HEX" : "ede1ce",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9432,7 +9434,8 @@
 				"PAINT" : "BLUE SPRUCE",
 				"TRIM" : "CREAMY",
 				"MAIN_HEX" : "617178",
-				"TRIM_HEX" : "efe8db"
+				"TRIM_HEX" : "efe8db",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9477,7 +9480,8 @@
 				"PAINT" : "TEA CHEST",
 				"TRIM" : "SAND DOLLAR",
 				"MAIN_HEX" : "7d644d",
-				"TRIM_HEX" : "d7c5b3"
+				"TRIM_HEX" : "d7c5b3",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9716,7 +9720,8 @@
 				"PAINT" : "TAUPE TONE",
 				"TRIM" : "OTTER",
 				"MAIN_HEX" : "ada090",
-				"TRIM_HEX" : "56433b"
+				"TRIM_HEX" : "56433b",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9849,7 +9854,8 @@
 				"PAINT" : "PAVILION BEIGE",
 				"TRIM" : "SVELTE SAGE",
 				"MAIN_HEX" : "c5b6a4",
-				"TRIM_HEX" : "b2ac96"
+				"TRIM_HEX" : "b2ac96",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9917,7 +9923,8 @@
 				"PAINT" : "OCEAN FLOOR",
 				"TRIM" : "COBBLESTONE PATH",
 				"MAIN_HEX" : "60676d",
-				"TRIM_HEX" : "9fa6a6"
+				"TRIM_HEX" : "9fa6a6",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -10219,7 +10226,8 @@
 				"PAINT" : "TREE BRANCH",
 				"TRIM" : "MODERATE WHITE",
 				"MAIN_HEX" : "8a7362",
-				"TRIM_HEX" : "e9decf"
+				"TRIM_HEX" : "e9decf",
+				"PICTURE" : "YES"
 			}
 		},
 		{
