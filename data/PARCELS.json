@@ -322,7 +322,8 @@
 				"TRIM" : "Apple Peel",
 				"PNT_YEAR" : "2019",
 				"MAIN_HEX" : "c6c0b6",
-				"TRIM_HEX" : null
+				"TRIM_HEX" : "F3EDE2",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -692,11 +693,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11719 S ROCK WILLOW WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null,
+				"PAINT" : "PEPPERCORN",
+				"TRIM" : "LAZY GRAY",
+				"PNT_YEAR" : "2018",
+				"MAIN_HEX" : "585858",
+				"TRIM_HEX" : "bec1c3",
 				"PICTURE" : "YES"
 			}
 		},
@@ -1154,11 +1155,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11654 S BREEZE GRASS WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "KNOXVILLE GRAY",
+				"TRIM" : "EDGECOMB GRAY",
+				"PNT_YEAR" : "2019",
+				"MAIN_HEX" : "5f6d6d",
+				"TRIM_HEX" : "DAD1C4",
+				"PICTURE" : "YES"
 			}
 		},
 		{
