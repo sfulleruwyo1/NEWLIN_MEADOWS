@@ -495,7 +495,8 @@
 				"TRIM" : "Steamed Milk",
 				"PNT_YEAR" : "2019+",
 				"MAIN_HEX" : "c5b6a4",
-				"TRIM_HEX" : "ece1d1"
+				"TRIM_HEX" : "ece1d1",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -695,7 +696,8 @@
 				"TRIM" : null,
 				"PNT_YEAR" : null,
 				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"TRIM_HEX" : null,
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -790,7 +792,8 @@
 				"TRIM" : "HIGH REFLECTIVE WHITE",
 				"PNT_YEAR" : "2020",
 				"MAIN_HEX" : "ccc9c0",
-				"TRIM_HEX" : "f7f7f1"
+				"TRIM_HEX" : "f7f7f1",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -977,11 +980,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11616 S FLOWER MOUND WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "HARDWARE",
+				"TRIM" : "ACCESSIBLE BEIGE",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "8B8372",
+				"TRIM_HEX" : "D1C7B8",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -1418,11 +1422,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11646 S FLOWER MOUND WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "RUGGED CRAG",
+				"TRIM" : "TRADITIONAL IVORY",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "8B8C65",
+				"TRIM_HEX" : "DFD3BF",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -2410,11 +2415,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11612 S BREEZE GRASS WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "BALSAM BARK",
+				"TRIM" : "GREEK OLIVE",
+				"PNT_YEAR" : "2019",
+				"MAIN_HEX" : "C1A888",
+				"TRIM_HEX" : "5F5B4D",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -3674,7 +3680,8 @@
 				"TRIM" : null,
 				"PNT_YEAR" : null,
 				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"TRIM_HEX" : null,
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -7816,11 +7823,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11713 S FLOWER MOUND WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "Custom",
+				"TRIM" : "Custom",
+				"PNT_YEAR" : "2019",
+				"MAIN_HEX" : "7F745E",
+				"TRIM_HEX" : "C0B99D",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -7992,11 +8000,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15570 E PINE DROP AVE",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "GAUNTLET GREY",
+				"TRIM" : "PURE WHITE",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "78736e",
+				"TRIM_HEX" : "EDECE6",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9560,7 +9569,8 @@
 				"PAINT" : "FUNCTIONAL GRAY",
 				"TRIM" : "CASA BLANCA",
 				"MAIN_HEX" : "aba39a",
-				"TRIM_HEX" : "ede1ce"
+				"TRIM_HEX" : "ede1ce",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9582,7 +9592,8 @@
 				"PAINT" : "GRIZZLE GRAY",
 				"TRIM" : "ANTIQUE WHITE",
 				"MAIN_HEX" : "636562",
-				"TRIM_HEX" : "e8dcc6"
+				"TRIM_HEX" : "e8dcc6",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9628,7 +9639,8 @@
 				"PAINT" : "TIKI HUT",
 				"TRIM" : "LOGGIA",
 				"MAIN_HEX" : "826f5e",
-				"TRIM_HEX" : "c4b7a5"
+				"TRIM_HEX" : "c4b7a5",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9743,7 +9755,8 @@
 				"PAINT" : "GRIZZLE GRAY",
 				"TRIM" : "EXTRA WHITE",
 				"MAIN_HEX" : "636562",
-				"TRIM_HEX" : "f6f6f4"
+				"TRIM_HEX" : "f6f6f4",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9784,7 +9797,8 @@
 				"PAINT" : "GAUNTLET GRAY",
 				"TRIM" : "HIGH REFLECTIVE WHITE",
 				"MAIN_HEX" : "78736e",
-				"TRIM_HEX" : "f7f7f1"
+				"TRIM_HEX" : "f7f7f1",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9831,7 +9845,8 @@
 				"PAINT" : "QUIVER TAN",
 				"TRIM" : "INCREDIBLE WHITE",
 				"MAIN_HEX" : "8e7f6a",
-				"TRIM_HEX" : "e3ded7"
+				"TRIM_HEX" : "e3ded7",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9877,7 +9892,8 @@
 				"PAINT" : "GAUNTLET GRAY",
 				"TRIM" : "SNOWBOUND",
 				"MAIN_HEX" : "78736e",
-				"TRIM_HEX" : "edeae5"
+				"TRIM_HEX" : "edeae5",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -10014,7 +10030,8 @@
 				"PAINT" : "DOVE TAIL",
 				"TRIM" : "WHITE DUCK",
 				"MAIN_HEX" : "908a83",
-				"TRIM_HEX" : "e5dfd2"
+				"TRIM_HEX" : "e5dfd2",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -10036,7 +10053,8 @@
 				"PAINT" : "GRAY MATTERS",
 				"TRIM" : "IRISH CREAM",
 				"MAIN_HEX" : "a7a8a2",
-				"TRIM_HEX" : "e3d2b8"
+				"TRIM_HEX" : "e3d2b8",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -10059,7 +10077,8 @@
 				"PAINT" : "STICKS & STONES",
 				"TRIM" : "MARSHMALLOW",
 				"MAIN_HEX" : "a49689",
-				"TRIM_HEX" : "eee9e0"
+				"TRIM_HEX" : "eee9e0",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -10199,7 +10218,8 @@
 				"PAINT" : "WAYNESBORO TAUPE",
 				"TRIM" : "STARDUST",
 				"MAIN_HEX" : "a69b8e",
-				"TRIM_HEX" : "928679"
+				"TRIM_HEX" : "928679",
+				"PICTURE" : "YES"
 			}
 		},
 		{
