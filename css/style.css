@@ -149,3 +149,7 @@ h4 {
 .row {
   margin: 0 auto;
 }
+
+.comments {
+  color: red
+}

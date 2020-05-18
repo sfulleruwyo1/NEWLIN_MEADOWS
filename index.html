@@ -464,6 +464,10 @@
             let mainColor = '';
             let trimColor = '';
             let popup = `<div class="row"><div><b>ADDRESS: </b>${address}</div></div>`;
+            if (prop.COMMENTS != null) {
+              popup +=
+                `<div class="row pt-3 comments text-center"><h4><b>${prop.COMMENTS}</b></h4></div>`;
+            }
             if (prop.PAINT != null) {
               mainColor = prop.PAINT;
               popup +=

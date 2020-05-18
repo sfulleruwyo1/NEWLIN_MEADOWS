@@ -2238,11 +2238,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11653 S FLOWER MOUND WAY",
-				"PAINT" : "Polished Concrete",
-				"TRIM" : "Ibis White",
+				"PAINT" : "POLISHED CONCRETE",
+				"TRIM" : "IBIS WHITE",
 				"PNT_YEAR" : "2020",
 				"MAIN_HEX" : "9e9793",
-				"TRIM_HEX" : "f2ece6"
+				"TRIM_HEX" : "f2ece6",
+				"COMMENTS" : "COLOR NOT TO BE REPEATED!"
 			}
 		},
 		{
@@ -9698,7 +9699,8 @@
 				"TRIM" : "SILVERPOINTE",
 				"MAIN_HEX" : "7f8486",
 				"TRIM_HEX" : "d1d2cb",
-				"PICTURE" : "YES"
+				"PICTURE" : "YES",
+				"COMMENTS" : "COLOR NOT TO BE REPEATED!"
 			}
 		},
 		{
@@ -10286,7 +10288,9 @@
 				"PAINT" : "SOFTWARE",
 				"TRIM" : "ANTIQUE WHITE",
 				"MAIN_HEX" : "7f8486",
-				"TRIM_HEX" : "e8dcc6"
+				"TRIM_HEX" : "e8dcc6",
+				"PICTURE" : "YES",
+				"COMMENTS" : "COLOR NOT TO BE REPEATED!"
 			}
 		},
 		{
