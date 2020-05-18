@@ -790,9 +790,11 @@
 			"properties" : {
 				"ADDRESS" : "15629 E INDIAN GRASS AVE",
 				"PAINT" : "REPOSE GRAY",
+				"PAINT2" : "MINDFUL GRAY",
 				"TRIM" : "HIGH REFLECTIVE WHITE",
 				"PNT_YEAR" : "2020",
 				"MAIN_HEX" : "ccc9c0",
+				"MAIN_2_HEX" : "bcb7ad",
 				"TRIM_HEX" : "f7f7f1",
 				"PICTURE" : "YES"
 			}
@@ -1260,11 +1262,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11855 S ROCK WILLOW WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "GAUNTLET GRAY",
+				"TRIM" : "PURE WHITE",
+				"PNT_YEAR" : "2019",
+				"MAIN_HEX" : "78736e",
+				"TRIM_HEX" : "edece6",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -1550,11 +1553,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11630 S MAIDEN HAIR WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "GRIZZLE GRAY",
+				"TRIM" : "IVORY LACE",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "636562",
+				"TRIM_HEX" : "ece5d8",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -2501,11 +2505,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11695 S FLOWER MOUND WAY",
-				"PAINT" : "Web Gray",
-				"TRIM" : "Greek Villa",
-				"PNT_YEAR" : "2020",
-				"MAIN_HEX" : "616669",
-				"TRIM_HEX" : "f0ece2"
+				"PAINT" : null,
+				"TRIM" : null,
+				"PNT_YEAR" : null,
+				"MAIN_HEX" : null,
+				"TRIM_HEX" : null
 			}
 		},
 		{
@@ -3008,11 +3012,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11654 S FLOWER MOUND WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "WEB GRAY",
+				"TRIM" : "GREEK VILLA",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "616669",
+				"TRIM_HEX" : "f0ece2",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -3678,11 +3683,11 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15743 E MEADOW VISTA CIR",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null,
+				"PAINT" : "ROOKWOOD RED",
+				"TRIM" : "MEDICI IVORY",
+				"PNT_YEAR" : "2019",
+				"MAIN_HEX" : "622f2d",
+				"TRIM_HEX" : "f3e9d7",
 				"PICTURE" : "YES"
 			}
 		},
@@ -5537,11 +5542,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "15502 E FLOWER MOUND PL",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "CUSTOM",
+				"TRIM" : "CUSTOM",
+				"PNT_YEAR" : "2019",
+				"MAIN_HEX" : "33455d",
+				"TRIM_HEX" : "d4ccc3",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -6447,11 +6453,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11791 S BREEZE GRASS WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "ELEPHANT EAR",
+				"TRIM" : "ALABASTER",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "988f85",
+				"TRIM_HEX" : "edeae0",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -6470,11 +6477,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11814 S ROCK WILLOW WAY",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "HIGH TEA",
+				"TRIM" : "UNIVERSAL KHAKI",
+				"PNT_YEAR" : "2019",
+				"MAIN_HEX" : "7e6f59",
+				"TRIM_HEX" : "b8a992",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9618,7 +9626,8 @@
 				"PAINT" : "DOVE TAIL",
 				"TRIM" : "WHITE DUCK",
 				"MAIN_HEX" : "908a83",
-				"TRIM_HEX" : "e5dfd2"
+				"TRIM_HEX" : "e5dfd2",
+				"PICTURE": "YES"
 			}
 		},
 		{
@@ -9688,7 +9697,8 @@
 				"PAINT" : "SOFTWARE",
 				"TRIM" : "SILVERPOINTE",
 				"MAIN_HEX" : "7f8486",
-				"TRIM_HEX" : "d1d2cb"
+				"TRIM_HEX" : "d1d2cb",
+				"PICTURE" : "YES"
 			}
 		},
 		{
@@ -9708,8 +9718,10 @@
 			"properties" : {
 				"ADDRESS" : "11546 S TUMBLE BRUSH ST",
 				"PAINT" : "GAUNTLET GRAY",
+				"PAINT2" : "ACIER",
 				"TRIM" : "WESTHIGHLAND WHITE",
 				"MAIN_HEX" : "78736e",
+				"MAIN_2_HEX" : "9e9991",
 				"TRIM_HEX" : "f3eee3",
 				"PICTURE" : "YES"
 			}
@@ -10053,8 +10065,10 @@
 			"properties" : {
 				"ADDRESS" : "15526 E FLOWER MOUND PL",
 				"PAINT" : "GRAY MATTERS",
+				"PAINT2" : "PEPPERCORN",
 				"TRIM" : "IRISH CREAM",
 				"MAIN_HEX" : "a7a8a2",
+				"MAIN_HEX2" : "585858",
 				"TRIM_HEX" : "e3d2b8",
 				"PICTURE" : "YES"
 			}
@@ -10245,10 +10259,10 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11743 S BREEZE GRASS WAY",
-				"PAINT" : "TREE BRANCH",
-				"TRIM" : "MODERATE WHITE",
-				"MAIN_HEX" : "8a7362",
-				"TRIM_HEX" : "e9decf",
+				"PAINT" : "SOFTER TAN",
+				"TRIM" : "FOOTHILLS",
+				"MAIN_HEX" : "dacab2",
+				"TRIM_HEX" : "827466",
 				"PICTURE" : "YES"
 			}
 		},
@@ -10293,8 +10307,10 @@
 			"properties" : {
 				"ADDRESS" : "11601 S TUMBLE BRUSH ST",
 				"PAINT" : "TANBARK",
+				"PAINT2" : "GRAY MATTERS",
 				"TRIM" : "DRIED EDAMAME",
 				"MAIN_HEX" : "896656",
+				"MAIN_2_HEX" : "a7a8a2",
 				"TRIM_HEX" : "b19f80",
 				"PICTURE" : "YES"
 			}
@@ -10425,11 +10441,12 @@
 			},
 			"properties" : {
 				"ADDRESS" : "11674 S TUMBLE BRUSH ST",
-				"PAINT" : null,
-				"TRIM" : null,
-				"PNT_YEAR" : null,
-				"MAIN_HEX" : null,
-				"TRIM_HEX" : null
+				"PAINT" : "FOOTHILLS",
+				"TRIM" : "WELL-BRED-BROWN",
+				"PNT_YEAR" : "2020",
+				"MAIN_HEX" : "827466",
+				"TRIM_HEX" : "564537",
+				"PICTURE" : "YES"
 			}
 		}
 	]

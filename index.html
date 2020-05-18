@@ -458,6 +458,7 @@
             let prop = feature.properties;
             let address = prop.ADDRESS;
             let mainHex = prop.MAIN_HEX;
+            let secondHex = prop.MAIN_2_HEX;
             let trim = prop.TRIM;
             let trimHex = prop.TRIM_HEX;
             let mainColor = '';
@@ -467,6 +468,11 @@
               mainColor = prop.PAINT;
               popup +=
                 `<div class="row pt-3"><b>MAIN COLOR:</b><div class='box' style = 'background-color:#${mainHex}'></div><span> ${mainColor}</span></div>`;
+            }
+            if (prop.PAINT2 != null) {
+              secondColor = prop.PAINT2;
+              popup +=
+                `<div class="row pt-3"><b>SECOND BODY COLOR:</b><div class='box' style = 'background-color:#${secondHex}'></div><span> ${secondColor}</span></div>`;
             }
             if (prop.TRIM != null) {
               trimColor = trim;
