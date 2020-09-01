@@ -45,12 +45,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" id='layers' href="" data-toggle="dropdown" aria-haspopup='true'
               area-expanded='false'>Layers
               <i class="fas fa-layer-group"></i>
             </a>
-          </li> -->
+          </li>
           <li class="nav-item">
             <a class="nav-link" id='basemaps' href="" data-toggle="dropdown" aria-haspopup='true'
               area-expanded='false'>Basemaps
@@ -126,9 +126,16 @@
 
         </div>
         <div class="modal-body">
-          <div class="layerModal pl-4 py-5"></div>
-          <!-- <div id='legend'></div> -->
-
+          <div class="layerModal pl-5 py-5">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="paint" checked>
+              <label class="form-check-label" for="paint">Paint Colors</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="parcels" checked>
+              <label class="form-check-label" for="parcels">Parcels</label>
+            </div>
+          </div>
         </div>
 
         <div class="modal-footer justify-content-center">
@@ -194,7 +201,11 @@
                   height='40px'> Imagery Labels</a>
             </div>
           </div>
-
+          <div class='row'>
+            <div class='col-10 py-1 px-3 basemapDiv'>
+              <a class=" basemap Drone" href="#"><img src='img/drone.png' height='60px' width='60px'> Drone Imagery</a>
+            </div>
+          </div>
           <div class="modal-footer justify-content-center">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           </div>
@@ -202,7 +213,6 @@
       </div>
     </div>
     <!-- Full Height Modal Right -->
-
     <!-- End your project here-->
 
     <!-- jQuery -->
@@ -245,6 +255,7 @@
       let password = sessionStorage.password || '';
       let token;
       let layers = [];
+      let paint;
       let layer = '';
       let label = '';
       let legendData = [];
@@ -334,6 +345,19 @@
           map.addLayer(label);
           $('.basemap').removeClass('active');
           $("." + basemap).addClass('active');
+        } else if (basemap == 'DroneImagery') {
+          map.options.maxZoom = 21;
+          layer = L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
+            tms: true,
+            opacity: 1,
+            attribution: "",
+            minZoom: 1,
+            maxZoom: 22
+          });
+          map.addLayer(layer);
+          $('.basemap').removeClass('active');
+          $("." + basemap).addClass('active');
+
         } else {
           map.options.maxZoom = 21;
           //layer = L.esri.basemapLayer(basemap);
@@ -453,7 +477,7 @@
 
         let data = await getData();
 
-        let parcels = L.geoJson(data, {
+        paint = L.geoJson(data, {
           onEachFeature: function (feature, layer) {
             let prop = feature.properties;
             let address = prop.ADDRESS;
@@ -496,9 +520,9 @@
           style: function (feature) {
             let prop = feature.properties;
             let mainHex = prop.MAIN_HEX;
-            let color = 'blue';
-            let fillOpacity = 0.3;
-            let lineColor = 'blue';
+            let color;
+            let fillOpacity = 0.1;
+            let lineColor;
             let trimHex = prop.TRIM_HEX;
             let weight = .5;
             if (mainHex != null) {
@@ -520,6 +544,32 @@
 
         }).addTo(map);
 
+        parcels = L.geoJson(data, {
+          onEachFeature: function (feature, layer) {
+            let prop = feature.properties;
+            let address = prop.ADDRESS;
+            layer.bindTooltip(address);
+          },
+          style: function (feature) {
+            let prop = feature.properties;
+            let mainHex = prop.MAIN_HEX;
+            let color = 'black';
+            let fillOpacity = 0.01;
+            let lineColor = 'black';
+            let weight = .7;
+            return {
+              fillOpacity: fillOpacity,
+              fillColor: color,
+              fill: color,
+              color: lineColor,
+              weight: weight,
+              // opacity: .6,
+              //dashArray: "5, 5"
+            }
+          }
+
+        }).addTo(map);
+
         map.fitBounds(parcels.getBounds());
 
         $("#basemaps").on('click', function () {
@@ -527,10 +577,10 @@
           $("#basemapModal").modal('show');
         })
 
-        // $("#layers").on('click', function () {
+        $("#layers").on('click', function () {
 
-        //   $("#layerModal").modal('show');
-        // })
+          $("#layerModal").modal('show');
+        })
 
         // on modal hide remove markers from map and empty modal body
         $("#attributeModal").on('hide.bs.modal', function () {
@@ -555,6 +605,40 @@
         $('.material-tooltip-smaller').tooltip({
           template: '<div class="tooltip md-tooltip"><div class="tooltip-arrow md-arrow"></div><div class="tooltip-inner md-inner"></div></div>'
         });
+
+        $(document).on("change", ".layerControl", function () {
+          let text = $(this).attr("id");
+          let checkVal = $(this).prop('checked');
+          // if (checkVal == false) {
+          //   map.removeLayer(parcels);
+          // } else {
+          //   map.addLayer(parcels);
+          // }
+
+          if (checkVal == false && text == 'paint') {
+            if (map.hasLayer(paint)) {
+              map.removeLayer(paint);
+            }
+
+          } else {
+            if (!map.hasLayer(paint)) {
+              map.addLayer(paint);
+            }
+
+          }
+
+          if (checkVal == false && text == 'parcels') {
+            if (map.hasLayer(parcels)) {
+              map.removeLayer(parcels);
+            }
+
+          } else {
+            if (!map.hasLayer(parcels)) {
+              map.addLayer(parcels);
+            }
+
+          }
+        })
 
 
 
