@@ -136,6 +136,18 @@
               <label class="form-check-label" for="sprinkler">Sprinkler Heads</label>
             </div>
             <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="backflow" checked>
+              <label class="form-check-label" for="backflow">Backflow Valves</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="drip" checked>
+              <label class="form-check-label" for="drip">Drip Lines</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="sprinklerZones" checked>
+              <label class="form-check-label" for="sprinklerZones">Sprinkler Zones</label>
+            </div>
+            <div class="form-check">
               <input type="checkbox" class="form-check-input layerControl" id="paint" checked>
               <label class="form-check-label" for="paint">Paint Colors</label>
             </div>
@@ -256,7 +268,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.6/chroma.min.js"></script>
 
     <script src="js/CONTROLLER.js"></script>
+    <script src="js/BACKFLOW.js"></script>
     <script src="js/sprinklers.js"></script>
+    <script src="js/DRIP.js"></script>
+    <script src="js/SPRINKLER_ZONES.js"></script>
+    <script src="js/CONTROLLER_ZONES.js"></script>
     <script src="js/leaflet.filelayer.js"></script>
 
     <script>
@@ -275,6 +291,10 @@
       let kml = '';
       let sprinklerHeads;
       let controllerLoc;
+      let backflowLayer;
+      let dripLayer;
+      let sprinklerZoneLayer;
+      let controlZoneLayer;
       //let layerIds = [];
 
       /**
@@ -286,7 +306,7 @@
        **/
       function createMap() {
         map = L.map('map').setView([39.771068138277485, -104.98054504394533], 11);
-        map.options.maxZoom = 21;
+        map.options.maxZoom = 22;
         layer = L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
           tms: true,
           opacity: 1,
@@ -654,6 +674,92 @@
           }
         }).addTo(map);
 
+        backflowLayer = L.geoJson(backflow, {
+          onEachFeature: function (feature, layer) {
+            let prop = feature.properties;
+            let popup = '';
+            Object.entries(prop).forEach(entry => {
+              const [key, value] = entry;
+              console.log(value)
+              if (key == 'Image1') {
+                popup +=
+                  `<div class="row"><div><b>${key}: </b><img src="${value}" width="300" height="300"></div></div>`;
+              } else {
+                popup += `<div class="row"><div><b>${key}: </b>${value}</div></div>`;
+              }
+              
+
+              layer.bindPopup(popup)
+            })
+          },
+          pointToLayer: function (feature, latlng) {
+            return new L.CircleMarker(latlng, {
+              radius: 8,
+              fillOpacity: 1,
+              color: 'black',
+              fillColor: 'red',
+              weight: 1
+            })
+          }
+        }).addTo(map);
+
+        dripLayer = L.geoJson(drip, {
+          onEachFeature: function (feature, layer) {
+            let prop = feature.properties;
+            let popup = '';
+            Object.entries(prop).forEach(entry => {
+              const [key, value] = entry;
+              console.log(value)
+              if (key == 'Image1') {
+                popup +=
+                  `<div class="row"><div><b>${key}: </b><img src="${value}" width="300" height="300"></div></div>`;
+              } else {
+                popup += `<div class="row"><div><b>${key}: </b>${value}</div></div>`;
+              }
+              
+
+              layer.bindPopup(popup)
+            })
+          },
+          style: function (feature) {
+            return {
+              color: 'blue',
+              weight: 4,
+
+            }
+          }
+
+        }).addTo(map);
+
+        sprinklerZoneLayer = L.geoJson(sprinklerZones, {
+          onEachFeature: function (feature, layer) {
+            let prop = feature.properties;
+            let popup = '';
+            Object.entries(prop).forEach(entry => {
+              const [key, value] = entry;
+              console.log(value)
+              if (key == 'Image1') {
+                popup +=
+                  `<div class="row"><div><b>${key}: </b><img src="${value}" width="300" height="300"></div></div>`;
+              } else {
+                popup += `<div class="row"><div><b>${key}: </b>${value}</div></div>`;
+              }
+              
+
+              layer.bindPopup(popup)
+            })
+          },
+          style: function (feature) {
+            return {
+              color: colorize(feature.properties.Zones),
+              weight: 1,
+              fillOpacity: 0.4
+
+            }
+          }
+
+        }).addTo(map);
+
         map.fitBounds(parcels.getBounds());
 
         $("#basemaps").on('click', function () {
@@ -730,6 +836,36 @@
           } else if (checkVal == true && text == 'controller') {
             if (!map.hasLayer(controllerLoc)) {
               map.addLayer(controllerLoc);
+            }
+
+          } else if (checkVal == false && text == 'backflow') {
+            if (map.hasLayer(backflowLayer)) {
+              map.removeLayer(backflowLayer);
+            }
+
+          } else if (checkVal == true && text == 'backflow') {
+            if (!map.hasLayer(backflowLayer)) {
+              map.addLayer(backflowLayer);
+            }
+
+          } else if (checkVal == false && text == 'drip') {
+            if (map.hasLayer(dripLayer)) {
+              map.removeLayer(dripLayer);
+            }
+
+          } else if (checkVal == true && text == 'drip') {
+            if (!map.hasLayer(dripLayer)) {
+              map.addLayer(dripLayer);
+            }
+
+          } else if (checkVal == false && text == 'sprinklerZones') {
+            if (map.hasLayer(sprinklerZoneLayer)) {
+              map.removeLayer(sprinklerZoneLayer);
+            }
+
+          } else if (checkVal == true && text == 'sprinklerZones') {
+            if (!map.hasLayer(sprinklerZoneLayer)) {
+              map.addLayer(sprinklerZoneLayer);
             }
 
           }
