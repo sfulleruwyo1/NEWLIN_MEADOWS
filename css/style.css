@@ -148,6 +148,9 @@ h4 {
 
 .row {
   margin: 0 auto;
+  font: 13px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .comments {

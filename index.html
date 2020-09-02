@@ -128,6 +128,14 @@
         <div class="modal-body">
           <div class="layerModal pl-5 py-5">
             <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="controller" checked>
+              <label class="form-check-label" for="controller">Irrigation Controllers</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="sprinkler" checked>
+              <label class="form-check-label" for="sprinkler">Sprinkler Heads</label>
+            </div>
+            <div class="form-check">
               <input type="checkbox" class="form-check-input layerControl" id="paint" checked>
               <label class="form-check-label" for="paint">Paint Colors</label>
             </div>
@@ -245,6 +253,10 @@
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.71.1/dist/L.Control.Locate.min.js"
       charset="utf-8"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.6/chroma.min.js"></script>
+
+    <script src="js/CONTROLLER.js"></script>
+    <script src="js/sprinklers.js"></script>
     <script src="js/leaflet.filelayer.js"></script>
 
     <script>
@@ -261,6 +273,8 @@
       let legendData = [];
       let control = '';
       let kml = '';
+      let sprinklerHeads;
+      let controllerLoc;
       //let layerIds = [];
 
       /**
@@ -273,7 +287,13 @@
       function createMap() {
         map = L.map('map').setView([39.771068138277485, -104.98054504394533], 11);
         map.options.maxZoom = 21;
-        layer = L.esri.basemapLayer('Streets').addTo(map);
+        layer = L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
+          tms: true,
+          opacity: 1,
+          attribution: "",
+          minZoom: 1,
+          maxZoom: 22
+        }).addTo(map);
         let lc = L.control.locate({
           position: 'topleft',
           strings: {
@@ -570,6 +590,70 @@
 
         }).addTo(map);
 
+        let dupeCounts = []
+        // loop through the feature data
+        //console.log(sprinklers.features)
+        sprinklers.features.forEach(element => dupeCounts.push(Number(element.properties.Zone)));
+        // remove duplicates
+        let counts = [...new Set(dupeCounts)];
+        console.log(counts)
+        const breaks = chroma.limits(counts, 'e', 15);
+        // build a colorize function
+        const colorize = chroma
+          .scale(['yellow', 'navy'])
+          .domain(breaks)
+          .mode('lch').correctLightness();
+
+        sprinklerHeads = L.geoJson(sprinklers, {
+          onEachFeature: function (feature, layer) {
+            let prop = feature.properties;
+            let popup = '';
+            Object.entries(prop).forEach(entry => {
+              const [key, value] = entry;
+              popup += `<div class="row"><div><b>${key}: </b>${value}</div></div>`;
+              layer.bindPopup(popup)
+            })
+          },
+          pointToLayer: function (feature, latlng) {
+            return new L.CircleMarker(latlng, {
+              radius: 4,
+              fillOpacity: 1,
+              color: 'white',
+              fillColor: colorize(feature.properties.Zone),
+              weight: 1
+            })
+          }
+        }).addTo(map);
+
+        controllerLoc = L.geoJson(controller, {
+          onEachFeature: function (feature, layer) {
+            let prop = feature.properties;
+            let popup = '';
+            Object.entries(prop).forEach(entry => {
+              const [key, value] = entry;
+              console.log(value)
+              if (key == 'Image1') {
+                popup +=
+                  `<div class="row"><div><b>${key}: </b><img src="${value}" width="300" height="300"></div></div>`;
+              } else {
+                popup += `<div class="row"><div><b>${key}: </b>${value}</div></div>`;
+              }
+              
+
+              layer.bindPopup(popup)
+            })
+          },
+          pointToLayer: function (feature, latlng) {
+            return new L.CircleMarker(latlng, {
+              radius: 8,
+              fillOpacity: 1,
+              color: 'black',
+              fillColor: 'cyan',
+              weight: 1
+            })
+          }
+        }).addTo(map);
+
         map.fitBounds(parcels.getBounds());
 
         $("#basemaps").on('click', function () {
@@ -594,8 +678,6 @@
 
         $(".basemap").on('click', function () {
           let basemap = $(this).text().replace(/\s+/g, "");
-          //basemap = basemap.replace(/\s+/g,"");
-          //console.log(basemap);
           setBasemap(basemap);
           $("#basemapModal").modal('hide');
         })
@@ -609,35 +691,49 @@
         $(document).on("change", ".layerControl", function () {
           let text = $(this).attr("id");
           let checkVal = $(this).prop('checked');
-          // if (checkVal == false) {
-          //   map.removeLayer(parcels);
-          // } else {
-          //   map.addLayer(parcels);
-          // }
 
           if (checkVal == false && text == 'paint') {
             if (map.hasLayer(paint)) {
               map.removeLayer(paint);
             }
 
-          } else {
-            if (!map.hasLayer(paint)) {
-              map.addLayer(paint);
-            }
-
-          }
-
-          if (checkVal == false && text == 'parcels') {
+          } else if (checkVal == false && text == 'parcels') {
             if (map.hasLayer(parcels)) {
               map.removeLayer(parcels);
             }
 
-          } else {
+          } else if (checkVal == true && text == 'paint') {
+            if (!map.hasLayer(paint)) {
+              map.addLayer(paint);
+            }
+
+          } else if (checkVal == true && text == 'parcels') {
             if (!map.hasLayer(parcels)) {
               map.addLayer(parcels);
             }
 
+          } else if (checkVal == false && text == 'sprinkler') {
+            if (map.hasLayer(sprinklerHeads)) {
+              map.removeLayer(sprinklerHeads);
+            }
+
+          } else if (checkVal == true && text == 'sprinkler') {
+            if (!map.hasLayer(sprinklerHeads)) {
+              map.addLayer(sprinklerHeads);
+            }
+
+          } else if (checkVal == false && text == 'controller') {
+            if (map.hasLayer(controllerLoc)) {
+              map.removeLayer(controllerLoc);
+            }
+
+          } else if (checkVal == true && text == 'controller') {
+            if (!map.hasLayer(controllerLoc)) {
+              map.addLayer(controllerLoc);
+            }
+
           }
+
         })
 
 
