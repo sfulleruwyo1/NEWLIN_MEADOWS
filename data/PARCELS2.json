@@ -417,7 +417,7 @@
 				"accent_code" : "SW7674",
 				"accent_hex" : "585858",
 				"year" : 2021,
-				"picture" : "YES"
+				"picture" : "NO"
 			}
 		},
 		{
@@ -438,7 +438,7 @@
 				"ADDRESS" : "15525 E FLOWER MOUND PL",
 				"body_color" : "COLONNADE",
 				"body_code" : "5404",
-				"body_hex" : "98C597",
+				"body_hex" : "7C7369",
 				"body_color_2" : "",
 				"body_code_2" : "",
 				"body_hex_2" : "",
@@ -859,7 +859,7 @@
 				"accent_code" : "SW7020",
 				"accent_hex" : "4F4842",
 				"year" : 2017,
-				"picture" : "YES"
+				"picture" : "NO"
 			}
 		},
 		{
@@ -1006,7 +1006,7 @@
 				"accent_code" : "",
 				"accent_hex" : "",
 				"year" : 2016,
-				"picture" : "YES"
+				"picture" : "NO"
 			}
 		},
 		{
@@ -1211,7 +1211,7 @@
 				"accent_code" : "SW6258",
 				"accent_hex" : "2F2F30",
 				"year" : 2019,
-				"picture" : "YES"
+				"picture" : "NO"
 			}
 		},
 		{
