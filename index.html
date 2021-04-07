@@ -128,27 +128,27 @@
         <div class="modal-body">
           <div class="layerModal pl-5 py-5">
             <div class="form-check">
-              <input type="checkbox" class="form-check-input layerControl" id="controller" checked>
+              <input type="checkbox" class="form-check-input layerControl" id="controller">
               <label class="form-check-label" for="controller">Irrigation Controllers</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input layerControl" id="sprinkler" checked>
+              <input type="checkbox" class="form-check-input layerControl" id="sprinkler">
               <label class="form-check-label" for="sprinkler">Sprinkler Heads</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input layerControl" id="backflow" checked>
+              <input type="checkbox" class="form-check-input layerControl" id="backflow">
               <label class="form-check-label" for="backflow">Backflow Valves</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input layerControl" id="drip" checked>
+              <input type="checkbox" class="form-check-input layerControl" id="drip">
               <label class="form-check-label" for="drip">Drip Lines</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input layerControl" id="sprinklerZones" checked>
+              <input type="checkbox" class="form-check-input layerControl" id="sprinklerZones">
               <label class="form-check-label" for="sprinklerZones">Sprinkler Zones</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input layerControl" id="paint" checked>
+              <input type="checkbox" class="form-check-input layerControl" id="paint">
               <label class="form-check-label" for="paint">Paint Colors</label>
             </div>
             <div class="form-check">
@@ -391,7 +391,7 @@
           const response = await $.ajax({
             cache: false,
             type: 'GET',
-            url: 'data/PARCELS.json',
+            url: 'data/PARCELS2.json',
             dataType: 'json'
           }).done(function (data) {
             responsedata = data;
@@ -487,36 +487,34 @@
 
         paint = L.geoJson(data, {
           onEachFeature: function (feature, layer) {
+            //console.log(feature.properties)
             let prop = feature.properties;
             let address = prop.ADDRESS;
-            let mainHex = prop.MAIN_HEX;
-            let secondHex = prop.MAIN_2_HEX;
-            let trim = prop.TRIM;
-            let trimHex = prop.TRIM_HEX;
+            let mainHex = prop.body_hex;
+            let secondHex = prop.body_hex_2;
+            let trim = prop.trim_color;
+            let trimHex = prop.trim_hex;
             let mainColor = '';
             let trimColor = '';
             let popup = `<div class="row"><div><b>ADDRESS: </b>${address}</div></div>`;
-            if (prop.COMMENTS != null) {
-              popup +=
-                `<div class="row pt-3 comments text-center"><h4><b>${prop.COMMENTS}</b></h4></div>`;
-            }
-            if (prop.PAINT != null) {
-              mainColor = prop.PAINT;
+
+            if (prop.body_color != '') {
+              mainColor = prop.body_color;
               popup +=
                 `<div class="row pt-3"><b>MAIN COLOR:</b><div class='box' style = 'background-color:#${mainHex}'></div><span> ${mainColor}</span></div>`;
             }
-            if (prop.PAINT2 != null) {
-              let secondColor = prop.PAINT2;
+            if (prop.body_color_2 != '') {
+              let secondColor = prop.body_color_2;
               popup +=
                 `<div class="row pt-3"><b>SECOND BODY COLOR:</b><div class='box' style = 'background-color:#${secondHex}'></div><span> ${secondColor}</span></div>`;
             }
-            if (prop.TRIM != null) {
+            if (prop.trim_color != '') {
               trimColor = trim;
               popup +=
                 `<div class="row pt-3"><b>TRIM COLOR:</b><div class='box' style = 'background-color:#${trimHex}'></div><span> ${trim}</span></div>`;
             }
 
-            if (prop.PICTURE) {
+            if (prop.picture) {
               popup +=
                 `<div class="row pt-3 text-center"><img src="img/homes/${address}.jpg" alt="HOUSE" height="200" width="300"></div>`;
             }
@@ -527,13 +525,13 @@
           },
           style: function (feature) {
             let prop = feature.properties;
-            let mainHex = prop.MAIN_HEX;
+            let mainHex = prop.body_hex;
             let color;
             let fillOpacity = 0.1;
             let lineColor;
-            let trimHex = prop.TRIM_HEX;
+            let trimHex = prop.trim_hex;
             let weight = .5;
-            if (mainHex != null) {
+            if (mainHex != '') {
               color = '#' + mainHex;
               fillOpacity = 1;
               lineColor = '#' + trimHex;
@@ -550,7 +548,7 @@
             }
           }
 
-        }).addTo(map);
+        });
 
         parcels = L.geoJson(data, {
           onEachFeature: function (feature, layer) {
@@ -611,7 +609,7 @@
               weight: 1
             })
           }
-        }).addTo(map);
+        });
 
         controllerLoc = L.geoJson(controller, {
           onEachFeature: function (feature, layer) {
@@ -640,7 +638,7 @@
               weight: 1
             })
           }
-        }).addTo(map);
+        });
 
         backflowLayer = L.geoJson(backflow, {
           onEachFeature: function (feature, layer) {
@@ -669,7 +667,7 @@
               weight: 1
             })
           }
-        }).addTo(map);
+        });
 
         dripLayer = L.geoJson(drip, {
           onEachFeature: function (feature, layer) {
@@ -697,7 +695,7 @@
             }
           }
 
-        }).addTo(map);
+        });
 
         sprinklerZoneLayer = L.geoJson(sprinklerZones, {
           onEachFeature: function (feature, layer) {
@@ -726,7 +724,7 @@
             }
           }
 
-        }).addTo(map);
+        });
 
         map.fitBounds(parcels.getBounds());
 
