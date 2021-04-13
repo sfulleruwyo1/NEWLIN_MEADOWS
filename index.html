@@ -301,6 +301,7 @@
     <script src="js/SPRINKLER_ZONES.js"></script>
     <script src="js/CONTROLLER_ZONES.js"></script>
     <script src="js/leaflet.filelayer.js"></script>
+    <script src="js/PARCELS2.js"></script>
 
     <script>
       let map;
@@ -374,7 +375,8 @@
        **/
       function createMap() {
         map = L.map('map').setView([39.771068138277485, -104.98054504394533], 11);
-        map.options.maxZoom = 22;
+        map.options.maxZoom = 21;
+        map.options.minZoom = 15;
         layer = L.esri.basemapLayer('Imagery').addTo(map);
         let lc = L.control.locate({
           position: 'topleft',
@@ -397,6 +399,8 @@
         };
 
         L.Control.FileLayerLoad.LABEL = '<img class="icon" src="img/svg/folder.svg" alt="file icon"/>';
+
+
 
         control = L.Control.fileLayerLoad({
           fitBounds: true,
@@ -453,8 +457,8 @@
             tms: true,
             opacity: 1,
             attribution: "",
-            minZoom: 1,
-            maxZoom: 22
+            minZoom: 15,
+            maxZoom: 21
           });
           map.addLayer(layer);
           $('.basemap').removeClass('active');
@@ -577,7 +581,7 @@
         //Initialize Map
         createMap();
 
-        let data = await getData();
+        // let data = await getData();
 
         paint = L.geoJson(data, {
           onEachFeature: function (feature, layer) {
