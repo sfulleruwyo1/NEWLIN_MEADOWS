@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="google-signin-client_id"
+    content="276776074543-2j14u3pd4gjii3nnknrk8oergrvlnlb6.apps.googleusercontent.com">
   <title>Newlin Meadows</title>
   <!-- AzTec icon -->
   <!-- <link rel="icon" href="img/favicon.ico" type="image/x-icon"> -->
@@ -59,12 +61,12 @@
           </li>
         </ul>
 
-        <!-- <form class="form-inline">
-          <div class="md-form my-0">
+        <form class="form-inline">
+          <!-- <div class="md-form my-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          </div>
-          <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
-        </form> -->
+          </div> -->
+          <button id='logout' class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3">Logout</button>
+        </form>
       </div>
     </nav>
 
@@ -167,6 +169,61 @@
   </div>
   <!-- Full Height Modal Right -->
 
+  <!-- Full Height Modal Right -->
+  <div class="modal fade right" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+
+    <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+    <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100" id="label"><b>Feature Info</b></h4>
+
+        </div>
+        <div class="modal-body">
+          <div class="layerModalinfo pl-5 py-5">
+            <!-- <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="controller">
+              <label class="form-check-label" for="controller">Irrigation Controllers</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="sprinkler">
+              <label class="form-check-label" for="sprinkler">Sprinkler Heads</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="backflow">
+              <label class="form-check-label" for="backflow">Backflow Valves</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="drip">
+              <label class="form-check-label" for="drip">Drip Lines</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="sprinklerZones">
+              <label class="form-check-label" for="sprinklerZones">Sprinkler Zones</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="paint">
+              <label class="form-check-label" for="paint">Paint Colors</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input layerControl" id="parcels" checked>
+              <label class="form-check-label" for="parcels">Parcels</label>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary" id="save">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Full Height Modal Right -->
+
   <!-- Full Height Modal small -->
   <div class="modal fade" id="basemapModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
@@ -235,6 +292,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.6/chroma.min.js"></script>
 
+    <script src="https://apis.google.com/js/api.js?onload=onLoad" async defer></script>
+
     <script src="js/CONTROLLER.js"></script>
     <script src="js/BACKFLOW.js"></script>
     <script src="js/sprinklers.js"></script>
@@ -263,7 +322,48 @@
       let dripLayer;
       let sprinklerZoneLayer;
       let controlZoneLayer;
+      let auth2;
       //let layerIds = [];
+
+      async function onLoad() {
+        await new Promise((resolve, reject) => {
+          gapi.load('client:auth2', {
+            callback: resolve,
+            onerror: reject
+          });
+        })
+
+        await gapi.client.init({
+          client_id: '276776074543-2j14u3pd4gjii3nnknrk8oergrvlnlb6.apps.googleusercontent.com',
+          scope: 'profile'
+        })
+
+        await new Promise((res) => {
+          const initialSignedIn = gapi.auth2.getAuthInstance().isSignedIn.get();
+          if (initialSignedIn) {
+
+            gapi.auth2.getAuthInstance().isSignedIn.listen(signinChanged);
+
+            $("#logout").on('click', function (e) {
+              e.preventDefault();
+              gapi.auth2.getAuthInstance().signOut().then(function () {
+                console.log('user signed out')
+              })
+            })
+
+          } else {
+            window.location.replace("login.html");
+          }
+        });
+      }
+
+      function signinChanged(val) {
+
+        if (!val) {
+          window.location.replace("login.html");
+        }
+      };
+
 
       /**
        * Create leaflet map
@@ -275,13 +375,7 @@
       function createMap() {
         map = L.map('map').setView([39.771068138277485, -104.98054504394533], 11);
         map.options.maxZoom = 22;
-        layer = L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
-          tms: true,
-          opacity: 1,
-          attribution: "",
-          minZoom: 1,
-          maxZoom: 22
-        }).addTo(map);
+        layer = L.esri.basemapLayer('Imagery').addTo(map);
         let lc = L.control.locate({
           position: 'topleft',
           strings: {
@@ -520,7 +614,7 @@
             }
 
 
-            layer.bindPopup(popup);
+            //layer.bindPopup(popup);
             layer.bindTooltip(address);
           },
           style: function (feature) {
@@ -549,6 +643,34 @@
           }
 
         });
+
+        paint.on('click', function (e) {
+          let prop = e.layer.feature.properties;
+          console.log(prop)
+          let form = $(".layerModalinfo");
+          Object.entries(prop).forEach(entry => {
+            const [key, value] = entry;
+            let row;
+            if (key == 'accent_hex' || key == 'body_hex' || key == 'body_hex_2' || key == 'trim_hex' ||
+              key == 'trim_hex_2') {
+              row =
+                `<div><b><span class = 'capitalize'>${key.replace(/_/g, ' ')}: </span></b><span class='box' style = 'background-color:#${value}; display: inline-block;'></span></div>`
+            } else {
+              row =
+                `<div><b><span class = 'capitalize'>${key.replace(/_/g, ' ')}: </span></b><span>${value}</span></div>`
+            }
+
+            if (value) {
+              form.append(row)
+              if (key == 'picture' && value == 'YES') {
+                row2 =
+                  `<div class="row pt-3 text-center"><img src="img/homes/${prop.ADDRESS}.jpg" alt="HOUSE" height="200" width="300"></div>`
+                form.append(row2)
+              }
+            }
+          });
+          $("#infoModal").modal('show');
+        })
 
         parcels = L.geoJson(data, {
           onEachFeature: function (feature, layer) {
@@ -624,7 +746,7 @@
               } else {
                 popup += `<div class="row"><div><b>${key}: </b>${value}</div></div>`;
               }
-              
+
 
               layer.bindPopup(popup)
             })
@@ -653,7 +775,7 @@
               } else {
                 popup += `<div class="row"><div><b>${key}: </b>${value}</div></div>`;
               }
-              
+
 
               layer.bindPopup(popup)
             })
@@ -682,7 +804,7 @@
               } else {
                 popup += `<div class="row"><div><b>${key}: </b>${value}</div></div>`;
               }
-              
+
 
               layer.bindPopup(popup)
             })
@@ -710,7 +832,7 @@
               } else {
                 popup += `<div class="row"><div><b>${key}: </b>${value}</div></div>`;
               }
-              
+
 
               layer.bindPopup(popup)
             })
@@ -745,6 +867,14 @@
             map.removeLayer(marker);
           }
         });
+
+        // on modal hide remove markers from map and empty modal body
+        $("#infoModal").on('hide.bs.modal', function () {
+          $(".layerModalinfo").empty()
+        });
+
+
+
 
 
 

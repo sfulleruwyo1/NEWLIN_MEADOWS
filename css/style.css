@@ -138,12 +138,12 @@ h4 {
 
 .box {
   height: 20px;
-  width: 20px;
+  width: 80px;
   border: 1px solid black;
   margin-right : 5px;
   margin-left : 5px;
   position: relative;
-  bottom: 2px;
+  top: 2px;
 }
 
 .row {
@@ -155,4 +155,12 @@ h4 {
 
 .comments {
   color: red
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+span {
+  font: 13px "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
