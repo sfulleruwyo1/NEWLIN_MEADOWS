@@ -278,14 +278,6 @@
     <script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js"
       integrity="sha512-cMQ5e58BDuu1pr9BQ/eGRn6HaR6Olh0ofcHFWe5XesdCITVuSBiBZZbhCijBe5ya238f/zMMRYIMIIg1jxv4sQ=="
       crossorigin=""></script>
-    <!-- Load turf.js from CDN -->
-    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-
-    <script src="https://unpkg.com/mapbox-gl/dist/mapbox-gl.js"></script>
-
-    <script src="https://unpkg.com/esri-leaflet-vector/dist/esri-leaflet-vector-debug.js"></script>
-
-    <script src="https://unpkg.com/togeojson@0.14.2"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.71.1/dist/L.Control.Locate.min.js"
       charset="utf-8"></script>
@@ -398,32 +390,6 @@
           clickable: false
         };
 
-        L.Control.FileLayerLoad.LABEL = '<img class="icon" src="img/svg/folder.svg" alt="file icon"/>';
-
-
-
-        control = L.Control.fileLayerLoad({
-          fitBounds: true,
-          layerOptions: {
-            style: style,
-            pointToLayer: function (data, latlng) {
-              return L.circleMarker(
-                latlng, {
-                  style: style
-                }
-              );
-            }
-          }
-        });
-
-        control.addTo(map);
-        control.loader.on('data:loaded', function (e) {
-          if (map.hasLayer(kml)) {
-            map.removeLayer(kml);
-          }
-          kml = e.layer
-
-        });
       }
 
       /**
